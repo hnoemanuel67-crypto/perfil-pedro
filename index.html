@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil de Pedro</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  background:#030712;
+  color:white;
+  padding:18px;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.card{
+  background:linear-gradient(135deg,#050816,#07111f);
+  border:1px solid #25324a;
+  border-radius:16px;
+  margin-bottom:18px;
+  padding:25px;
+  box-shadow:0 0 25px #000;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:38% 62%;
+  overflow:hidden;
+  border:1px solid #c026d3;
+  padding:0;
+}
+
+.hero-img{
+  min-height:300px;
+  background:
+    linear-gradient(90deg,rgba(3,7,18,.1),#050816),
+    url("https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-text{
+  padding:45px;
+  position:relative;
+}
+
+.hero-text h4{
+  color:#a855f7;
+  letter-spacing:3px;
+  text-align:center;
+}
+
+.hero-text h1{
+  font-size:68px;
+  margin:15px 0;
+}
+
+.hero-text h1 span{
+  background:linear-gradient(90deg,#a855f7,#22d3ee);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero-text h2{
+  color:#38bdf8;
+  font-size:28px;
+  font-weight:500;
+}
+
+.hero-text p{
+  color:#cbd5e1;
+  margin-top:15px;
+  line-height:1.6;
+  max-width:600px;
+}
+
+.code-symbol{
+  position:absolute;
+  right:40px;
+  top:95px;
+  font-size:80px;
+  color:#38bdf8;
+  text-shadow:0 0 20px #38bdf8;
+}
+
+.title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:22px;
+}
+
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:14px;
+}
+
+.tech{
+  text-decoration:none;
+  color:white;
+  background:#081120;
+  border:1px solid #0ea5e9;
+  border-radius:10px;
+  text-align:center;
+  padding:20px 10px;
+  transition:.3s;
+}
+
+.tech:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 20px #0ea5e9;
+}
+
+.tech i{
+  font-size:58px;
+  margin-bottom:12px;
+}
+
+.tech h3{
+  margin:8px 0;
+}
+
+.tech small{
+  color:#d1d5db;
+}
+
+.note{
+  text-align:center;
+  color:#94a3b8;
+  margin-top:18px;
+}
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:25px;
+}
+
+.about-box{
+  border:1px solid #334155;
+  border-radius:12px;
+  padding:25px;
+  line-height:1.7;
+  color:#e5e7eb;
+}
+
+.code-box{
+  background:#020617;
+  border:1px solid #334155;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.window{
+  padding:10px;
+  background:#111827;
+}
+
+.dot{
+  display:inline-block;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  margin-right:5px;
+}
+
+.red{background:#ef4444}
+.yellow{background:#eab308}
+.green{background:#22c55e}
+
+pre{
+  padding:25px;
+  color:#a3e635;
+  overflow:auto;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:15px;
+}
+
+.service{
+  border:1px solid #7c3aed;
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+  background:#081120;
+}
+
+.service i{
+  font-size:42px;
+  margin-bottom:14px;
+  color:#22d3ee;
+}
+
+.service p{
+  color:#cbd5e1;
+  font-size:14px;
+  margin-top:8px;
+}
+
+.bottom{
+  display:grid;
+  grid-template-columns:35% 65%;
+  gap:25px;
+}
+
+.contact{
+  border:2px solid #d946ef;
+  border-radius:16px;
+}
+
+.contact-item{
+  display:flex;
+  gap:15px;
+  margin:18px 0;
+  border-bottom:1px solid #1e293b;
+  padding-bottom:10px;
+}
+
+.contact-item i{
+  font-size:28px;
+  color:#22d3ee;
+}
+
+.contact-item span{
+  color:#94a3b8;
+}
+
+.form input,.form textarea{
+  width:100%;
+  background:#111827;
+  border:1px solid #334155;
+  border-radius:8px;
+  padding:15px;
+  color:white;
+  margin-bottom:12px;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+button{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:8px;
+  background:linear-gradient(90deg,#c026d3,#0ea5e9);
+  color:white;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:
+    linear-gradient(90deg,#16002b,#06142f);
+}
+
+.footer h3{
+  font-weight:400;
+}
+
+.footer .big{
+  font-size:60px;
+  color:#38bdf8;
+}
+
+@media(max-width:900px){
+  .hero,.about,.bottom{
+    grid-template-columns:1fr;
+  }
+
+  .tech-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .services{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero-text h1{
+    font-size:45px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <section class="card hero">
+    <div class="hero-img"></div>
+
+    <div class="hero-text">
+      <h4>&lt; ¡BIENVENIDO A MI PERFIL! /&gt;</h4>
+      <h1>Hola, soy <span>Pedro</span> 👋</h1>
+      <h2>Estudiante de Desarrollo de Software</h2>
+      <p>
+        Apasionado por la programación, el diseño web y la creación
+        de soluciones que generen impacto. Siempre aprendiendo,
+        siempre construyendo.
+      </p>
+      <div class="code-symbol">&lt;/&gt;</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 class="title">🛠️ LENGUAJES Y TECNOLOGÍAS</h2>
+
+    <div class="tech-grid">
+
+      <a class="tech" href="https://www.java.com/es/" target="_blank">
+        <i class="devicon-java-plain colored"></i>
+        <h3>Java</h3>
+        <small>Ver más →</small>
+      </a>
+
+      <a class="tech" href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">
+        <i class="devicon-html5-plain colored"></i>
+        <h3>HTML5</h3>
+        <small>Ver más →</small>
+      </a>
+
+      <a class="tech" href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">
+        <i class="devicon-css3-plain colored"></i>
+        <h3>CSS3</h3>
+        <small>Ver más →</small>
+      </a>
+
+      <a class="tech" href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">
+        <i class="devicon-javascript-plain colored"></i>
+        <h3>JavaScript</h3>
+        <small>Ver más →</small>
+      </a>
+
+      <a class="tech" href="https://www.postgresql.org/" target="_blank">
+        <i class="devicon-postgresql-plain colored"></i>
+        <h3>PostgreSQL</h3>
+        <small>Ver más →</small>
+      </a>
+
+      <a class="tech" href="https://git-scm.com/" target="_blank">
+        <i class="devicon-git-plain colored"></i>
+        <h3>Git</h3>
+        <small>Ver más →</small>
+      </a>
+
+      <a class="tech" href="https://github.com/" target="_blank">
+        <i class="devicon-github-original"></i>
+        <h3>GitHub</h3>
+        <small>Ver más →</small>
+      </a>
+
+      <a class="tech" href="https://code.visualstudio.com/" target="_blank">
+        <i class="devicon-vscode-plain colored"></i>
+        <h3>VS Code</h3>
+        <small>Ver más →</small>
+      </a>
+
+    </div>
+
+    <p class="note">》 Haz clic en cada tecnología para aprender más sobre ella 《</p>
+  </section>
+
+  <section class="card about">
+    <div>
+      <h2>📖 SOBRE MÍ</h2>
+      <div class="about-box">
+        <p>
+          Soy un estudiante de desarrollo de software con interés en el
+          desarrollo web, aplicaciones de escritorio y bases de datos.
+        </p>
+        <br>
+        <p>
+          Disfruto aprender nuevas tecnologías, resolver problemas y trabajar
+          en proyectos que me permitan seguir creciendo como desarrollador.
+        </p>
+      </div>
+    </div>
+
+    <div class="code-box">
+      <div class="window">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+<pre>
+const pedro = {
+  nombre: "Pedro",
+  rol: "Estudiante de Desarrollo de Software",
+  habilidades: ["Java", "HTML", "CSS", "JavaScript", "SQL"],
+  aprendiendo: "Siempre",
+  objetivo: "Convertirme en un desarrollador Full Stack"
+};
+
+console.log("Aprendiendo, creando y mejorando cada día 🚀");
+</pre>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 class="title">🚀 SERVICIOS QUE PUEDO OFRECER</h2>
+
+    <div class="services">
+      <div class="service">
+        <i class="fa-solid fa-globe"></i>
+        <h3>Desarrollo Web</h3>
+        <p>Páginas web modernas, rápidas y responsivas.</p>
+      </div>
+
+      <div class="service">
+        <i class="fa-solid fa-desktop"></i>
+        <h3>Aplicaciones Java</h3>
+        <p>Sistemas de escritorio funcionales y eficientes.</p>
+      </div>
+
+      <div class="service">
+        <i class="fa-solid fa-database"></i>
+        <h3>Bases de Datos</h3>
+        <p>Diseño y gestión de bases de datos con PostgreSQL.</p>
+      </div>
+
+      <div class="service">
+        <i class="fa-solid fa-code"></i>
+        <h3>Soluciones a Medida</h3>
+        <p>Desarrollo de soluciones adaptadas a tus necesidades.</p>
+      </div>
+
+      <div class="service">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h3>Soporte Técnico</h3>
+        <p>Ayuda y mantenimiento para tus sistemas.</p>
+      </div>
+
+      <div class="service">
+        <i class="fa-solid fa-chart-simple"></i>
+        <h3>Automatización</h3>
+        <p>Automatiza procesos para ahorrar tiempo y recursos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom">
+    <div class="card contact">
+      <h2>📞 CONTACTO</h2>
+
+      <div class="contact-item">
+        <i class="fa-regular fa-envelope"></i>
+        <p><b>Correo</b><br><span>contacto@tuproyecto.com</span></p>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-brands fa-whatsapp"></i>
+        <p><b>WhatsApp</b><br><span>+503 0000-0000</span></p>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-globe"></i>
+        <p><b>Sitio Web</b><br><span>www.tuproyecto.com</span></p>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-brands fa-github"></i>
+        <p><b>GitHub</b><br><span>github.com/tuusuario</span></p>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-brands fa-linkedin"></i>
+        <p><b>LinkedIn</b><br><span>linkedin.com/in/tuusuario</span></p>
+      </div>
+    </div>
+
+    <div class="card form">
+      <h2>📝 FORMULARIO DE CLIENTE</h2>
+      <p>¿Tienes un proyecto en mente? Déjame tus datos y me pondré en contacto contigo.</p>
+      <br>
+
+      <div class="form-row">
+        <input type="text" placeholder="Tu nombre">
+        <input type="email" placeholder="Tu correo electrónico">
+      </div>
+
+      <textarea rows="5" placeholder="Mensaje"></textarea>
+
+      <button>Enviar mensaje <i class="fa-regular fa-paper-plane"></i></button>
+
+      <p class="note">
+        También puedes llenar el formulario
+        <a href="https://forms.gle/V1tovPGGz6f4azhY6" target="_blank" style="color:#22d3ee;">aquí</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="card footer">
+    <div>
+      <h3>Gracias por visitar mi perfil 🙌</h3>
+      <p>Siempre aprendiendo, siempre construyendo.</p>
+    </div>
+    <div class="big">&lt;/&gt;</div>
+  </section>
+
+</div>
+
+</body>
+</html>
