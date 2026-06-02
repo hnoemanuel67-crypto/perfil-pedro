@@ -1,1 +1,1 @@
-# perfil-pedro
+Archivos iniciales del proyecto
